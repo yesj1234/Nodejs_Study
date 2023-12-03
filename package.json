@@ -2,15 +2,26 @@
   "name": "nodejs",
   "version": "1.0.0",
   "description": "",
-  "main": "hello.js",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prehello": "echo 'this runs before hello does'",
+    "hello": "echo 'Hello World!'",
+    "posthello": "echo 'this runs after hello does'",
+    "start": "echo 'Start script can be called with out run between node and command. like npm start'",
+    "stop": "echo 'stop script can be called with out run between node and command. like npm stop'",
+    "restart": "echo 'restart script can be called with out run between node and command. like npm restart'",
+    "test": "echo 'test script can be called with out run between node and command. like npm test'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "axios": "^1.6.2",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
