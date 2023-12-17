@@ -1,10 +1,9 @@
 const router = require("express").Router();
-const { boardServiceInstance } = require("../services/board.js");
-router.get("/", (req, res) => {
-  res.render("home", { title: "Hello", message: "Nice to meet you" });
-});
+const { getBoard, writePost, getPost, getHome, checkPassword,getPostById, updatePost} = require("../services/board.js");
+router.get("/", getHome);
+router.get("/write", getBoard);
+router.post("/write", writePost);
 
-router.get("/write", boardServiceInstance.getBoard);
-
-router.get("/detail/:id", boardServiceInstance.getPost);
+router.get("/detail/:id", getPost);
+router.post("/check-password", checkPassword);
 module.exports = router;
