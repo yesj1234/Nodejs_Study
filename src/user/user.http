@@ -1,0 +1,31 @@
+POST http://localhost:3000/user/create 
+content-type: application/json 
+
+{
+    "username": "andy",
+    "password": "test1234",
+    "email": "andy@gmail.com"
+}
+
+GET http://localhost:3000/user/getUser/andy@gmail.com
+
+PUT http://localhost:3000/user/update/andy@gmail.com 
+content-type: application/json 
+
+
+{
+    "username": "andy2",
+    "password": "testing1234",
+    "email": "andy@gmail.com"
+}
+
+DELETE http://localhost:3000/user/delete/andy@gmail.com
+
+POST http://localhost:3000/user/create 
+content-type: application/json
+
+{
+    "username": "andy",
+    "password": "testing54321",
+    "email": "ysj"
+}
