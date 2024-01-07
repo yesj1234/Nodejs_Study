@@ -1,31 +1,36 @@
-POST http://localhost:3000/user/create 
-content-type: application/json 
-
-{
-    "username": "andy",
-    "password": "test1234",
-    "email": "andy@gmail.com"
-}
-
-GET http://localhost:3000/user/getUser/andy@gmail.com
-
-PUT http://localhost:3000/user/update/andy@gmail.com 
-content-type: application/json 
-
-
-{
-    "username": "andy2",
-    "password": "testing1234",
-    "email": "andy@gmail.com"
-}
-
-DELETE http://localhost:3000/user/delete/andy@gmail.com
-
-POST http://localhost:3000/user/create 
+### Create 
+POST http://localhost:3000/user/create
 content-type: application/json
 
 {
-    "username": "andy",
-    "password": "testing54321",
-    "email": "ysj"
+  "username": "andy",
+  "password": "test1234",
+  "email": "andy@podo.com"
+}
+
+### GetUser 
+GET http://localhost:3000/user/getUser/andy@podo.com
+
+
+### Update User 
+PUT http://localhost:3000/user/update/andy@podo.com
+content-type: application/json
+
+{
+  "email": "andy@podo.com",
+  "username": "andy2",
+  "password": "test12345"
+}
+
+### Delete User  
+DELETE http://localhost:3000/user/delete/andy@podo.com
+
+### 잘못된 이메일을 입력한 경우 
+POST http://localhost:3000/user/create
+content-type: application/json
+
+{
+  "username": "andy",
+  "password": "test1234",
+  "email": "andy-podo2"
 }
