@@ -14,7 +14,7 @@ POST http://localhost:3000/auth/login
 content-type: application/json
 
 {
-    "email" : "andy1@podo.com",
+    "email" : "andy8@podo.com",
     "password" : "1234"
 }
 

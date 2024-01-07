@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  Logger,
   Post,
   Request,
   Response,
@@ -13,6 +14,7 @@ import { AuthenticatedGuard, LocalAuthGuard, LoginGuard } from './auth.guard';
 
 @Controller('auth')
 export class AuthController {
+  private readonly logger = new Logger(AuthController.name);
   constructor(private authService: AuthService) {}
 
   @Post('register')
@@ -26,7 +28,9 @@ export class AuthController {
       req.body.email,
       req.body.password,
     );
+    this.logger.log(`userInfo: ${userInfo}`);
     if (userInfo) {
+      this.logger.log(`userInfo: ${userInfo}`);
       res.cookie('login', JSON.stringify(userInfo), {
         httpOnly: false,
         maxAge: 1000 * 60 * 60 * 24 * 7,
@@ -41,7 +45,7 @@ export class AuthController {
     if (!req.cookies['login'] && req.user) {
       res.cookie('login', JSON.stringify(req.user), {
         httpOnly: false,
-        maxAge: 1000 * 10,
+        maxAge: 1000 * 60 * 60 * 24 * 7,
       });
     }
   }

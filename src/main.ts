@@ -5,7 +5,9 @@ import * as cookieParser from 'cookie-parser';
 import * as session from 'express-session';
 import * as passport from 'passport';
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {
+    logger: ['error', 'debug', 'log', 'warn', 'fatal', 'verbose'],
+  });
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());
   app.use(
